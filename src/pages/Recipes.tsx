@@ -16,12 +16,12 @@ const Recipes: React.FC = () => {
       name: 'Grilled Chicken Salad',
       description: 'A healthy and delicious grilled chicken salad with fresh vegetables.',
       ingredients: [
-        { name: 'Chicken breast', amount: 2, unit: 'pieces' },
-        { name: 'Mixed greens', amount: 4, unit: 'cups' },
-        { name: 'Cherry tomatoes', amount: 1, unit: 'cup' },
-        { name: 'Cucumber', amount: 1, unit: 'piece' },
-        { name: 'Olive oil', amount: 2, unit: 'tbsp' },
-        { name: 'Balsamic vinegar', amount: 1, unit: 'tbsp' }
+        { id: '1', name: 'Chicken breast', amount: 2, unit: 'pieces', category: 'Protein' },
+        { id: '2', name: 'Mixed greens', amount: 4, unit: 'cups', category: 'Vegetables' },
+        { id: '3', name: 'Cherry tomatoes', amount: 1, unit: 'cup', category: 'Vegetables' },
+        { id: '4', name: 'Cucumber', amount: 1, unit: 'piece', category: 'Vegetables' },
+        { id: '5', name: 'Olive oil', amount: 2, unit: 'tbsp', category: 'Oils' },
+        { id: '6', name: 'Balsamic vinegar', amount: 1, unit: 'tbsp', category: 'Condiments' }
       ],
       instructions: [
         'Season chicken breast with salt and pepper',
@@ -68,12 +68,12 @@ const Recipes: React.FC = () => {
       name: 'Pasta Carbonara',
       description: 'Classic Italian pasta dish with eggs, cheese, and pancetta.',
       ingredients: [
-        { name: 'Spaghetti', amount: 1, unit: 'pound' },
-        { name: 'Pancetta', amount: 8, unit: 'ounces' },
-        { name: 'Eggs', amount: 4, unit: 'large' },
-        { name: 'Parmesan cheese', amount: 1, unit: 'cup' },
-        { name: 'Black pepper', amount: 1, unit: 'tsp' },
-        { name: 'Salt', amount: 1, unit: 'tsp' }
+        { id: '7', name: 'Spaghetti', amount: 1, unit: 'pound', category: 'Pasta' },
+        { id: '8', name: 'Pancetta', amount: 8, unit: 'ounces', category: 'Protein' },
+        { id: '9', name: 'Eggs', amount: 4, unit: 'large', category: 'Dairy' },
+        { id: '10', name: 'Parmesan cheese', amount: 1, unit: 'cup', category: 'Dairy' },
+        { id: '11', name: 'Black pepper', amount: 1, unit: 'tsp', category: 'Spices' },
+        { id: '12', name: 'Salt', amount: 1, unit: 'tsp', category: 'Spices' }
       ],
       instructions: [
         'Bring a large pot of salted water to boil',
@@ -122,12 +122,12 @@ const Recipes: React.FC = () => {
       name: 'Vegetarian Buddha Bowl',
       description: 'A colorful and nutritious bowl packed with vegetables and quinoa.',
       ingredients: [
-        { name: 'Quinoa', amount: 1, unit: 'cup' },
-        { name: 'Sweet potato', amount: 1, unit: 'large' },
-        { name: 'Chickpeas', amount: 1, unit: 'can' },
-        { name: 'Kale', amount: 2, unit: 'cups' },
-        { name: 'Avocado', amount: 1, unit: 'piece' },
-        { name: 'Tahini', amount: 2, unit: 'tbsp' }
+        { id: '13', name: 'Quinoa', amount: 1, unit: 'cup', category: 'Grains' },
+        { id: '14', name: 'Sweet potato', amount: 1, unit: 'large', category: 'Vegetables' },
+        { id: '15', name: 'Chickpeas', amount: 1, unit: 'can', category: 'Legumes' },
+        { id: '16', name: 'Kale', amount: 2, unit: 'cups', category: 'Vegetables' },
+        { id: '17', name: 'Avocado', amount: 1, unit: 'piece', category: 'Fruits' },
+        { id: '18', name: 'Tahini', amount: 2, unit: 'tbsp', category: 'Condiments' }
       ],
       instructions: [
         'Cook quinoa according to package directions',
@@ -164,11 +164,11 @@ const Recipes: React.FC = () => {
       name: 'Oatmeal with Berries',
       description: 'Warm oatmeal topped with fresh berries and honey.',
       ingredients: [
-        { name: 'Rolled oats', amount: 1, unit: 'cup' },
-        { name: 'Milk', amount: 2, unit: 'cups' },
-        { name: 'Mixed berries', amount: 1, unit: 'cup' },
-        { name: 'Honey', amount: 2, unit: 'tbsp' },
-        { name: 'Cinnamon', amount: 1, unit: 'tsp' }
+        { id: '19', name: 'Rolled oats', amount: 1, unit: 'cup', category: 'Grains' },
+        { id: '20', name: 'Milk', amount: 2, unit: 'cups', category: 'Dairy' },
+        { id: '21', name: 'Mixed berries', amount: 1, unit: 'cup', category: 'Fruits' },
+        { id: '22', name: 'Honey', amount: 2, unit: 'tbsp', category: 'Sweeteners' },
+        { id: '23', name: 'Cinnamon', amount: 1, unit: 'tsp', category: 'Spices' }
       ],
       instructions: [
         'Bring milk to a gentle boil in a medium saucepan',
@@ -357,7 +357,7 @@ const Recipes: React.FC = () => {
                     <h3>Ingredients</h3>
                     <ul>
                       {selectedRecipe.ingredients.map((ingredient, index) => (
-                        <li key={index}>
+                        <li key={ingredient.id}>
                           {ingredient.amount} {ingredient.unit} {ingredient.name}
                         </li>
                       ))}
