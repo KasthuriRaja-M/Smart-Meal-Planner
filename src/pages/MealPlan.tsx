@@ -294,33 +294,33 @@ const MealPlan: React.FC = () => {
               <div className="grid grid-4">
                 <div style={{ textAlign: 'center' }}>
                   <div style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#667eea' }}>
-                    {Object.values(currentPlan.meals).reduce((acc, meal) => 
-                      acc + (meal?.nutrition.calories || 0), 0
-                    )}
+                    {(currentPlan.meals.breakfast?.nutrition.calories || 0) +
+                     (currentPlan.meals.lunch?.nutrition.calories || 0) +
+                     (currentPlan.meals.dinner?.nutrition.calories || 0)}
                   </div>
                   <div style={{ color: '#666', fontSize: '0.9rem' }}>Calories</div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#667eea' }}>
-                    {Object.values(currentPlan.meals).reduce((acc, meal) => 
-                      acc + (meal?.nutrition.protein || 0), 0
-                    )}g
+                    {(currentPlan.meals.breakfast?.nutrition.protein || 0) +
+                     (currentPlan.meals.lunch?.nutrition.protein || 0) +
+                     (currentPlan.meals.dinner?.nutrition.protein || 0)}g
                   </div>
                   <div style={{ color: '#666', fontSize: '0.9rem' }}>Protein</div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#667eea' }}>
-                    {Object.values(currentPlan.meals).reduce((acc, meal) => 
-                      acc + (meal?.nutrition.carbs || 0), 0
-                    )}g
+                    {(currentPlan.meals.breakfast?.nutrition.carbs || 0) +
+                     (currentPlan.meals.lunch?.nutrition.carbs || 0) +
+                     (currentPlan.meals.dinner?.nutrition.carbs || 0)}g
                   </div>
                   <div style={{ color: '#666', fontSize: '0.9rem' }}>Carbs</div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#667eea' }}>
-                    {Object.values(currentPlan.meals).reduce((acc, meal) => 
-                      acc + (meal?.nutrition.fat || 0), 0
-                    )}g
+                    {(currentPlan.meals.breakfast?.nutrition.fat || 0) +
+                     (currentPlan.meals.lunch?.nutrition.fat || 0) +
+                     (currentPlan.meals.dinner?.nutrition.fat || 0)}g
                   </div>
                   <div style={{ color: '#666', fontSize: '0.9rem' }}>Fat</div>
                 </div>
