@@ -12,6 +12,9 @@ export interface Recipe {
   tags: string[];
   image?: string;
   nutrition: NutritionInfo;
+  rating?: number;
+  reviewCount?: number;
+  reviews?: Review[];
 }
 
 export interface Ingredient {
@@ -29,6 +32,17 @@ export interface NutritionInfo {
   fat: number;
   fiber: number;
   sugar: number;
+}
+
+export interface Review {
+  id: string;
+  recipeId: string;
+  userId: string;
+  userName: string;
+  rating: number;
+  comment: string;
+  date: string;
+  helpful: number;
 }
 
 export interface MealPlan {
