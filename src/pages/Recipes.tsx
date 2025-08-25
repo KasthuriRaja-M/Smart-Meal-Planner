@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import RecipeCard from '../components/RecipeCard';
-import { Recipe } from '../types';
+import RecipeRating from '../components/RecipeRating';
+import { Recipe, Review } from '../types';
 
 const Recipes: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');

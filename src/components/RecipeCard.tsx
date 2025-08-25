@@ -33,6 +33,12 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, onView, onAddToMealPlan
           <span>
             <i className="fas fa-fire"></i> {recipe.nutrition.calories} cal
           </span>
+          {recipe.rating && (
+            <span>
+              <i className="fas fa-star" style={{ color: '#ffd700' }}></i> {recipe.rating.toFixed(1)}
+              {recipe.reviewCount && ` (${recipe.reviewCount})`}
+            </span>
+          )}
         </div>
 
         <div className="recipe-tags">
